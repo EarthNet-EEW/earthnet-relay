@@ -1,0 +1,23 @@
+[package]
+name = "earthnet-relay"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+license = "AGPL-3.0-or-later"
+description = "EarthNet relay: low-latency fan-out of ConfirmedEvents from nodes to clients."
+repository = "https://github.com/devjamez/earthnet-relay"
+
+[dependencies]
+earthnet-protocol = { git = "https://github.com/devjamez/earthnet-protocol" }
+prost = "0.13"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
+axum = { version = "0.7", features = ["ws"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+ed25519-dalek = "2"
+rand = "0.8"
+tokio-tungstenite = "0.24"
+futures-util = "0.3"
+tower = { version = "0.5", features = ["util"] }
