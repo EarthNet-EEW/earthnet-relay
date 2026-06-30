@@ -1,8 +1,8 @@
-> 🌎 Part of **[EarthNet](https://github.com/devjamez/earthnet)** — open-source, decentralized earthquake early warning for Latin America.
+> 🌎 Part of **[EarthNet](https://github.com/EarthNet-EEW/earthnet)** — open-source, decentralized earthquake early warning for Latin America.
 
 # earthnet-relay
 
-Low-latency fan-out for [EarthNet](https://github.com/devjamez/earthnet-protocol).
+Low-latency fan-out for [EarthNet](https://github.com/EarthNet-EEW/earthnet-protocol).
 Nodes POST signed `ConfirmedEvent`s; the relay verifies and pushes them to all
 connected clients over a persistent WebSocket — the transport an Android
 foreground service holds open to receive alerts with the screen off.
