@@ -8,7 +8,7 @@ description = "EarthNet relay: low-latency fan-out of ConfirmedEvents from nodes
 repository = "https://github.com/devjamez/earthnet-relay"
 
 [dependencies]
-earthnet-protocol = { git = "https://github.com/devjamez/earthnet-protocol" }
+earthnet-protocol = { git = "https://github.com/EarthNet-EEW/earthnet-protocol" }
 prost = "0.13"
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
 axum = { version = "0.7", features = ["ws"] }
