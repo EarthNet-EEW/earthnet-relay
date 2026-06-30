@@ -224,7 +224,7 @@ dependencies = [
 [[package]]
 name = "earthnet-protocol"
 version = "0.1.0"
-source = "git+https://github.com/EarthNet-EEW/earthnet-protocol#8681b2504249e64b1e2d956caddd4fd233e9a878"
+source = "git+https://github.com/EarthNet-EEW/earthnet-protocol#64674323371128fb330152cfb90943ce5e5cc672"
 dependencies = [
  "ed25519-dalek",
  "prost",

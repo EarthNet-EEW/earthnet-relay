@@ -32,7 +32,9 @@ fn signed_event() -> ConfirmedEvent {
         num_observations: 1,
         obs_ids: vec![vec![1u8; 16]],
         supersedes: Vec::new(),
+        tier: 0,
         signature: Vec::new(),
+        attestations: Vec::new(),
     };
     sign(&key, &mut evt);
     evt
