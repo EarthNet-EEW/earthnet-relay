@@ -8,6 +8,7 @@
 //! v0.1 is a single-relay fan-out. Inter-relay gossip (libp2p/gossipsub) is a
 //! later hardening slice (DESIGN §5).
 
+pub mod metrics;
 pub mod server;
 
 use tokio::sync::broadcast;

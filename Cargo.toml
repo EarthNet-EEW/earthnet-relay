@@ -5,11 +5,12 @@ edition = "2021"
 rust-version = "1.74"
 license = "AGPL-3.0-or-later"
 description = "EarthNet relay: low-latency fan-out of ConfirmedEvents from nodes to clients."
-repository = "https://github.com/devjamez/earthnet-relay"
+repository = "https://github.com/EarthNet-EEW/earthnet-relay"
 
 [dependencies]
 earthnet-protocol = { git = "https://github.com/EarthNet-EEW/earthnet-protocol" }
 prost = "0.13"
+prometheus = "0.13"
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
 axum = { version = "0.7", features = ["ws"] }
 tracing = "0.1"

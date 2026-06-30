@@ -61,6 +61,30 @@ async fn post_valid_event_accepted() {
 }
 
 #[tokio::test]
+async fn metrics_endpoint_exposes_prometheus() {
+    let app = app(RelayState::new(16));
+    app.clone()
+        .oneshot(
+            Request::post("/events")
+                .body(Body::from(signed_event().encode_to_vec()))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    let resp = app
+        .oneshot(Request::get("/metrics").body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    assert_eq!(resp.status(), StatusCode::OK);
+    let body = axum::body::to_bytes(resp.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let text = String::from_utf8_lossy(&body);
+    assert!(text.contains("earthnet_relay_events_forwarded_total"));
+    assert!(text.contains("earthnet_relay_subscribers"));
+}
+
+#[tokio::test]
 async fn post_garbage_is_bad_request() {
     let resp = app(RelayState::new(16))
         .oneshot(
